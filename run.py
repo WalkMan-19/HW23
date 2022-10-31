@@ -25,6 +25,10 @@ if __name__ == '__main__':
 #         {
 #             "cmd": "limit",
 #             "value": "4"
+#         },
+#         {
+#             "cmd": "regex",
+#             "value": "images/\\w+\\.png"
 #         }
 #     ]
 # }

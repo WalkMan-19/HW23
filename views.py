@@ -1,12 +1,13 @@
 from flask import Blueprint, request, jsonify
 from marshmallow import ValidationError
 from models import create_query, ManyRequestParams
+from typing import List, Tuple
 
 main_bp = Blueprint('main_bp', __name__)
 
 
 @main_bp.route('/perform_query', methods=['POST'])
-def perform_query():
+def perform_query() -> jsonify(List[str]) | Tuple[str, int]:
     try:
         params = ManyRequestParams().load(request.json)
     except ValidationError as e:
